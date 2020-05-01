@@ -11,6 +11,7 @@ namespace UserDirectory.Data
 {
     public sealed class DBConnectionManager
     {
+        #region Singleton
         private readonly string connectionstring;
 
         private static DBConnectionManager instance;
@@ -25,15 +26,18 @@ namespace UserDirectory.Data
                 }
                 return instance;
             }
-            
-        }
 
+        } 
+        #endregion
 
-        private  DBConnectionManager()
+        #region Ctor
+        private DBConnectionManager()
         {
-            connectionstring=ConfigurationManager.ConnectionStrings["UserDirectoryDBEntities"].ConnectionString;
+            connectionstring = ConfigurationManager.ConnectionStrings["UserDirectoryDBEntities"].ConnectionString;
         }
+        #endregion
 
+        #region Public Methods
         public DataTable GetData(string strQry)
         {
             DataTable dt;
@@ -53,6 +57,7 @@ namespace UserDirectory.Data
             }
 
             return dt;
-        }
+        } 
+        #endregion
     }
 }

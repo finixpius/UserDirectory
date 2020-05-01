@@ -12,6 +12,7 @@ namespace UserDirectory.ViewModel
 {
     public class UserListViewModel : INotifyPropertyChanged
     {
+        #region Properties
         public event PropertyChangedEventHandler PropertyChanged;
 
         private clsUser selectedUser;
@@ -33,15 +34,19 @@ namespace UserDirectory.ViewModel
             set
             {
                 lstUser = value;
-                
+
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("LstUser"));
             }
         }
-       
+        #endregion
+
+        #region Ctor
         public UserListViewModel()
         {
         }
+        #endregion
 
+        #region Public Methods
         public void Initialize()
         {
             LstUser = GetAllUser();
@@ -94,13 +99,16 @@ namespace UserDirectory.ViewModel
             }
             return objUser;
         }
+        #endregion
 
+        #region Private Methods
         private DataTable GetUser(string strQry)
         {
             if (string.IsNullOrEmpty(strQry))
                 return null;
 
             return Data.DBConnectionManager.Instance.GetData(strQry);
-        }
+        } 
+        #endregion
     }
 }

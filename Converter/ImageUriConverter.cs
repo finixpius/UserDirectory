@@ -14,7 +14,7 @@ namespace UserDirectory.Converter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return new BitmapImage(
-     new Uri(@"/Resources/Images/" + System.Convert.ToInt32(value) + ".jpg",UriKind.Relative));
+     new Uri(@"/Resources/Images/" + System.Convert.ToInt32(value) + ".jpg", UriKind.Relative));
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

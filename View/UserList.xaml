@@ -51,7 +51,7 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                
-                <Grid Margin="10">
+                <Grid Margin="10" Height="150" VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -78,8 +78,8 @@
                     <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding SelectedUser.Gender,Converter={StaticResource GenderConverter}}"></TextBlock>
                 </Grid>
 
-                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="White">
-                    <Image Margin="5"  Source="{Binding SelectedUser.ID,Converter={StaticResource ImageUriConverter}}" MaxHeight="200" />
+                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Image Margin="5"   Source="{Binding SelectedUser.ID,Converter={StaticResource ImageUriConverter}}" MaxHeight="200" MaxWidth="200" />
                 </Border>
             </Grid>
         </StackPanel>

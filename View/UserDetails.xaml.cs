@@ -21,14 +21,11 @@ namespace UserDirectory.View
     /// </summary>
     public partial class UserDetails : UserControl
     {
-        readonly UserListViewModel objUserDetails;
         public UserDetails()
         {
             InitializeComponent();
-            objUserDetails = new UserListViewModel();//UserDetalsViewModel();
+            var objUserDetails = new UserListViewModel();
             this.DataContext = objUserDetails;
         }
-
-       
     }
 }
